@@ -1,0 +1,622 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	color: #fff;
+	font-size: 16px;
+}
+
+a,
+a.log {
+	text-decoration: none;
+}
+a:focus {
+	outline: 2px dashed #fff;
+	outline-offset: 4px;
+}
+
+img {
+	width: 100%;
+}
+
+.wrapper,
+.future {
+	background: rgb(38, 41, 83);
+	background: linear-gradient(
+		90deg,
+		rgba(38, 41, 83, 0.9747548677674195) 10%,
+		rgba(81, 86, 149, 0.9747548677674195) 44%,
+		rgba(11, 13, 47, 0.5966036072632177) 99%
+	);
+	width: 100%;
+	background-size: cover;
+}
+
+.container {
+	max-width: 1400px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+header {
+	display: flex;
+	justify-content: space-between; /* Logo la stânga, meniu la dreapta */
+	align-items: center; /* Aliniere verticală pe centru */
+	padding: 20px 0;
+}
+
+header .logo a.log {
+	color: white;
+	text-transform: uppercase;
+	font-size: 29px;
+	font-weight: 800;
+}
+header .logo a.log:hover {
+	cursor: pointer;
+	color: black;
+	transform: scale(1.1);
+	box-shadow: #fff;
+}
+
+header nav {
+	display: flex;
+	flex-grow: 1;
+	justify-content: flex-end; /* Spațiere între elemente */
+	align-items: center;
+	width: auto;
+}
+
+header nav ul {
+	display: flex;
+	list-style: none;
+	gap: 20px; /* Spațiu între elemente */
+}
+
+header nav ul li {
+	display: flex;
+	align-items: center;
+}
+header nav ul li.btn {
+	margin-left: auto; /* Împinge butoanele spre dreapta */
+}
+header nav ul li a {
+	color: #fff;
+	padding: 15px;
+
+	transition: all 0.3s ease;
+}
+
+/* Asigură-te că meniurile părinte sunt poziționate corect */
+nav ul li {
+	position: relative; /* Fiecare categorie devine un punct de referință */
+	display: flex;
+	align-items: center;
+}
+
+nav ul li a {
+	display: flex;
+	align-items: center; /* Aliniere verticală */
+	gap: 8px; /* Spațiu între text și săgeată */
+}
+
+/* Rotește iconița când hover pe meniu */
+nav ul li:hover a .arrow-down-icon {
+	transform: rotate(180deg);
+	transition: 0.3s ease;
+}
+
+/* Submeniuri (Telefon, TV & AV, Cabluri) */
+nav ul li .submenu-phone,
+nav ul li .submenu-tv,
+nav ul li .submenu-cables {
+	display: none;
+	position: absolute;
+	top: 100%; /* Plasare sub categoria părinte */
+	left: 0; /* Se aliniază la stânga */
+	width: 200px;
+	background-color: rgba(38, 41, 83, 0.9);
+	padding: 10px 0;
+	border-radius: 5px;
+	box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+	z-index: 100;
+}
+
+/* Arată submeniul la hover */
+nav ul li:hover .submenu-phone,
+nav ul li:hover .submenu-tv,
+nav ul li:hover .submenu-cables {
+	display: block;
+}
+
+/* Stilizare link-uri submeniu */
+nav .submenu-phone a,
+nav .submenu-tv a,
+nav .submenu-cables a {
+	display: block;
+	padding: 10px;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+}
+
+nav .submenu-phone a:hover,
+nav .submenu-tv a:hover,
+nav .submenu-cables a:hover {
+	background: rgba(81, 86, 149, 0.8);
+}
+
+header nav ul:not(.btn) a:hover {
+	border-bottom: 5px solid #fff;
+	box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+header nav ul li.btn a {
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-left: 10px;
+	background-color: rgba(81, 86, 149, 0.974);
+	color: white;
+	text-align: center;
+	transition: 0.3s ease;
+}
+
+header nav ul li.btn a:hover {
+	background-color: rgb(16, 31, 49);
+	box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+/* Bara de cautare */
+nav .search-bar {
+	display: flex;
+	align-items: center;
+	background: white;
+	border-radius: 50px;
+	padding: 3px 10px;
+	margin: 0 5px; /* Adaugă spațiu între meniu și buton */
+	width: 200px;
+	max-width: 100%;
+}
+
+nav .search-bar input {
+	border: none;
+	outline: none;
+	flex: 1;
+	font-size: 16px;
+	width: 100%;
+	padding: 5px;
+}
+
+nav .search-bar button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	color: rgb(38, 41, 83);
+	padding: 5px;
+}
+/* Ascunde hamburger pe desktop */
+.hamburger {
+	display: none;
+	background: none;
+	border: none;
+	font-size: 2rem;
+	cursor: pointer;
+	color: #333;
+}
+
+/* Meniu pe mobil */
+@media (max-width: 768px) {
+	.hamburger {
+		display: block;
+		position: absolute;
+		right: 1.5rem;
+		top: 1.5rem;
+		z-index: 1001;
+	}
+
+	nav .nav-menu {
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		top: 5rem;
+		right: 0;
+		width: 100%;
+		background-color: #fff;
+		z-index: 1000;
+		padding: 1rem 0;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	nav .nav-menu.active {
+		display: flex;
+		background-color: #00056d;
+	}
+
+	nav .nav-menu.active li ul {
+		display: none;
+	}
+	nav .nav-menu.active .arrow-down-icon {
+		display: none;
+	}
+
+	nav .nav-menu li {
+		text-align: center;
+		padding: 1rem;
+		border-bottom: 1px solid #eee;
+	}
+
+	nav .nav-menu li:last-child {
+		border-bottom: none;
+	}
+
+	/* Ascundem submeniurile din start */
+	nav .submenu-phone,
+	nav .submenu-tv,
+	nav .submenu-cables {
+		display: none;
+	}
+
+	/* Poți adăuga toggle JS pentru submenu-uri dacă vrei */
+}
+
+/* Partea cu Wellcome */
+.hero {
+	padding-bottom: 100px;
+	position: relative;
+	z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.hero--info {
+	width: 40%;
+	padding-top: 70px;
+}
+.hero--image {
+    width: 60%;
+}
+.hero--image img{
+    width: 100%;
+    height: auto;
+    background-color: #fff; /* Mută imaginea spre dreapta. Ajustează valoarea după necesitate */
+	border-radius: 30px; /* Colțuri rotunjite de 30px */
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adaugă o umbră subtilă */
+}
+.hero--info h2 {
+	color: #fff;
+	font-size: 30px;
+	font-weight: 600;
+	margin: 30px;
+}
+
+.hero--info h1 {
+	color: white;
+	font-size: 50px;
+	font-weight: 600;
+	font-size: 3rem;
+}
+
+.hero--info p {
+	font-weight: 500;
+	line-height: 170%;
+	margin-top: 20px;
+}
+
+
+
+.hero--info .btn {
+	background-color: rgba(81, 86, 149, 0.9747548677674195);
+	color: #fff;
+	margin: 30px;
+	font-size: 20px;
+	border-radius: 50px;
+	padding: 15px 30px;
+	border: 0;
+	cursor: pointer;
+	transition: all 500ms ease;
+    display: block;
+}
+
+.hero--info .btn:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+	border-color: #fff;
+	box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Stilul general al butonului Adaugă în coș */
+.btn-add-to-cart {
+	background-color: rgba(
+		81,
+		86,
+		149,
+		0.9747548677674195
+	); /* Culoare albastră similară cu tema */
+	color: white;
+	padding: 12px 25px;
+	font-size: 16px;
+	border-radius: 30px;
+	border: 2px solid transparent;
+	cursor: pointer;
+	transition: all 0.3s ease; /* Tranziție lină pentru schimbări */
+	text-align: center;
+	display: inline-block;
+	width: auto; /* Lăsăm butonul să se ajusteze la conținut */
+	margin-top: 10px;
+}
+
+/* Efecte de hover */
+.btn-add-to-cart:hover {
+	background-color: rgba(
+		81,
+		86,
+		149,
+		0.9747548677674195
+	); /* Culoare mai închisă pentru hover */
+	transform: scale(1.05); /* Ușor mai mare la hover */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Umbră subtilă la hover */
+	border: 2px solid #fff; /* Contur alb la hover */
+}
+
+/* Efect de focus pentru accesibilitate */
+.btn-add-to-cart:focus {
+	outline: 2px dashed #fff; /* Liniile de focus sunt vizibile pe fundalul închis */
+	outline-offset: 4px;
+}
+.cart-info {
+	background-color: rgba(38, 41, 83, 0.9); /* Fundal ușor opac */
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.cart-info p {
+	margin: 5px 0;
+	font-size: 16px;
+}
+
+.cart-count,
+.cart-total {
+	font-weight: 700;
+}
+
+
+
+/* sectiuding h3{
+nea produse top */
+.top {
+	text-align: center;
+	margin-bottom: 0;
+	padding-bottom: 50px;
+}
+
+.top-header {
+	display: flex;
+	justify-content: space-between; /* Plasează h1 la stânga și butonul la dreapta */
+	align-items: center; /* Aliniază elementele pe axa verticală */
+}
+
+.top-header h1 {
+	text-align: center;
+}
+.top-header h1 {
+	font-size: 35px; /* Marimea fontului */
+	font-weight: 700; /* Grosimea fontului */
+	color: #fff; /* Culoare albă pentru text */
+	text-align: left; /* Alinierea la centru */
+	margin-bottom: 30px;
+	padding-left: 25px;
+}
+.top-header .see-all {
+	background-color: rgba(81, 86, 149, 0.9747548677674195);
+	color: #fff;
+	margin: 30px;
+	font-size: 20px;
+	border-radius: 50px;
+	padding: 15px 30px;
+	border: 0;
+	transition: all 500ms ease;
+}
+
+.top-header .see-all:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+	box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.prod-info {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(250px, 1fr)
+	); /* Distribuirea produselor în grilă */
+	gap: 30px;
+	justify-content: center;
+	align-items: stretch;
+	text-align: center;
+}
+
+.img-prod {
+	background: #fff;
+	border-radius: 50px;
+	box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+	overflow: hidden;
+	text-align: center;
+	padding-bottom: 20px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	display: grid; /* Folosește grid pentru a organiza conținutul produsului */
+	grid-template-rows: auto 1fr auto; /* Definirea rândurilor (imagine, descriere, buton) */
+	justify-items: center; /* Centrează conținutul pe orizontală */
+	gap: 10px; /* Adaugă spațiu între imagini, descriere și buton */
+}
+
+.img-prod img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	display: block;
+}
+
+.prod-body {
+	padding: 15px;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	gap: 10px; /* Adaugă un spațiu între titlu, descriere și buton */
+}
+
+.card-title {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: rgb(38, 41, 83);
+	margin-bottom: 10px;
+}
+
+.card-text {
+	font-size: 0.9rem;
+	color: rgb(38, 41, 83);
+	margin-bottom: 15px;
+}
+
+.btn-top {
+	display: block;
+	background: rgb(38, 41, 83);
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 50px;
+	transition: all 500ms ease;
+	text-align: center;
+	margin-top: auto; /* Se asigură că butonul rămâne jos */
+}
+
+.btn-top:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+	box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+/* stilizari pagina products.html */
+
+.price {
+	font-weight: 600;
+	color: #26294a;
+	font-size: 1rem;
+	margin-bottom: 10px;
+}
+
+/* Stilizare  future*/
+.future-gallery {
+	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.future-gallery h3,
+.future-gallery p {
+	color: white;
+	margin-bottom: 15px;
+}
+
+.future-gallery img {
+	width: 150px; /* Ajustează dimensiunea imaginilor */
+	height: auto;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+	transition: transform 0.3s ease-in-out;
+	margin: 10px; /* Spațiere între imagini */
+}
+
+.future-gallery img:hover {
+	transform: scale(1.1);
+}
+
+/* Stilizare footer */
+
+footer {
+	background-color: rgba(38, 41, 83, 0.974);
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+	margin-top: 0;
+}
+.end-container {
+	max-width: 1400px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.end-container p {
+	font-size: 16px;
+	font-weight: 400;
+	margin: 0;
+}
+
+/* Stilizari  pentru ecrane mai mici */
+
+@media (max-width: 768px) {
+    .hero--image, .hero--info {
+        width: 100%;
+    }
+    .hero {
+        flex-wrap: wrap;
+    }
+	header nav {
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+	header nav ul {
+		width: auto;
+	}
+
+	nav .search-bar {
+		width: 100%;
+		margin: 10px 0;
+	}
+	.hero--info h1 {
+		font-size: 2rem;
+	}
+}
+
+/*  */
+@media (max-width: 768px) {
+	.prod-info {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.img-prod {
+		grid-template-rows: auto 1fr auto;
+	}
+	.hero-img {
+		position: static;
+		flex-direction: column;
+		width: auto;
+		height: auto;
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.top-header {
+		flex-direction: column;
+		padding: 0 20px;
+	}
+
+	.top-header h1 {
+		text-align: center;
+		padding-left: 0;
+	}
+
+	.top-header button {
+		margin: 10px auto;
+	}
+	.prod-info {
+		grid-template-columns: 1fr;
+	}
+}

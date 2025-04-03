@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="WaltStore is your one-stop shop for tech accessories, including phones, chargers, cables, and more."
+		/>
+		<title>WaltStore</title>
+		<!-- Includ fontul de pe Google Fonts - Poppins -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;500;700;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Includ fontul pentru iconite -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+			rel="stylesheet"
+		/>
+		<!-- Inlcud fisierele mele de css -->
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="container">
+				<!-- Imaginea de logo "span" -->
+				<span class="logo"><a href="index.html" class="log">WaltStore</a></span>
+				<button class="hamburger" id="hamburger" aria-label="Meniu">
+					<span class="material-symbols-outlined">menu</span>
+				</button>
+
+				<!-- Bara de navigare  -->
+				<nav>
+					<ul class="nav-menu">
+						<li>
+							<a href="pages/products.html"
+								>Telefoane
+								<span class="material-symbols-outlined arrow-down-icon">
+									arrow_drop_down
+								</span></a
+							>
+							<ul class="submenu-phone">
+								<li><a href="#">Huse</a></li>
+								<li><a href="#">Sticle de protecție</a></li>
+								<li><a href="#">PowerBank</a></li>
+								<li><a href="#">Suporturi</a></li>
+								<li><a href="#">Tripied</a></li>
+								<li><a href="#">Accesorii</a></li>
+								<li><a href="#">Wireless Chargers</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="pages/products.html"
+								>TV & AV
+								<span class="material-symbols-outlined arrow-down-icon">
+									arrow_drop_down
+								</span></a
+							>
+							<ul class="submenu-tv">
+								<li><a href="#">Proiectoare</a></li>
+								<li><a href="#">Cabluri</a></li>
+							</ul>
+						</li>
+						<li><a href="pages/products.html">Incarcatoare</a></li>
+
+						<li>
+							<a href="pages/products.html"
+								>Cabluri
+								<span class="material-symbols-outlined arrow-down-icon">
+									arrow_drop_down
+								</span>
+							</a>
+							<ul class="submenu-cables">
+								<li><a href="#">Type-C to USB</a></li>
+								<li><a href="#">Lightning to USB</a></li>
+								<li><a href="#">Lightning to Type-C</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<form
+								class="search-bar"
+								action="pages/products.html"
+								method="GET"
+							>
+								<input type="text" name="q" placeholder="Caută produse..." />
+								<button type="submit">
+									<span class="material-symbols-outlined">search</span>
+								</button>
+							</form>
+						</li>
+
+						<li class="btn">
+							<a href="pages/contact.html"
+								><span class="material-symbols-outlined"> person </span></a
+							>
+							<a href="#"
+								><span class="material-symbols-outlined"> favorite </span></a
+							>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="container"><h2>Welcome!</h2></div>
+			<div class="hero container">
+				<div class="hero--info">
+					<h1>Vino la noi</h1>
+					<p>
+						WaltStore este magazinul tău de încredere pentru accesorii tech — de
+						la huse și încărcătoare, până la cabluri, suporturi și gadgeturi
+						smart. Descoperă cele mai noi produse la prețuri avantajoase,
+						livrate rapid direct la tine acasă.
+					</p>
+
+					<a href="pages/contact.html" class="btn">Get more Details</a>
+				</div>
+				<div class="hero--image">
+					<img src="images/logotip.jpg" alt="logotip" class="hero-img" />
+				</div>
+			</div>
+			<section class="top">
+				<div class="top-header container">
+					<h1>Produse TOP</h1>
+					<a href="pages/products.html" class="see-all">See All</a>
+				</div>
+
+				<div class="prod-info">
+					<!-- Lista produse /Produs 1 -->
+					<div class="img-prod">
+						<img src="images/robot.jpg" alt="Husă Antishock" />
+						<div class="prod-body">
+							<h5 class="card-title">Husă Antishock</h5>
+							<p class="card-text">
+								Protejează eficient în cazul impacturilor puternice.
+							</p>
+							<a href="pages/contact.html" class="btn-top">Detalii</a>
+						</div>
+					</div>
+
+					<!-- Produsul 2 -->
+					<div class="img-prod">
+						<img src="images/robot.jpg" alt="Husă Silicon Soft" />
+						<div class="prod-body">
+							<h5 class="card-title">Husă din Silicon Soft</h5>
+							<p class="card-text">
+								Textură plăcută și rezistentă la amprente.
+							</p>
+							<a href="pages/contact.html" class="btn-top">Detalii</a>
+						</div>
+					</div>
+					<!-- Produsul 3 -->
+					<div class="img-prod">
+						<img src="images/robot.jpg" alt="Husă cu suport" />
+						<div class="prod-body">
+							<h5 class="card-title">Husă cu Suport Integrat</h5>
+							<p class="card-text">
+								Ideală pentru vizionare de filme sau apeluri video.
+							</p>
+							<a href="pages/contact.html" class="btn-top">Detalii</a>
+						</div>
+					</div>
+					<!-- Produsul 4 -->
+					<div class="img-prod">
+						<img src="images/robot.jpg" alt="Husă Slim" />
+						<div class="prod-body">
+							<h5 class="card-title">Husă Slim Transparentă</h5>
+							<p class="card-text">
+								Design subțire și clar pentru protecție discretă.
+							</p>
+							<p class="price">49 RON</p>
+							<a href="pages/contact.html" class="btn-top">Detalii</a>
+						</div>
+					</div>
+					<!-- Podusul 5 -->
+					<div class="img-prod">
+						<img src="images/robot.jpg" alt="Suport Auto Magnetic" />
+						<div class="prod-body">
+							<h5 class="card-title">Suport Auto Magnetic</h5>
+							<p class="card-text">
+								Se fixează pe bord. Ține telefonul stabil în timpul condusului.
+							</p>
+							<a href="pages/contact.html" class="btn-top">Detalii</a>
+						</div>
+					</div>
+
+					<!-- Produsul 6 -->
+					<div class="img-prod">
+						<img src="images/robot.jpg" alt="Folie de sticlă 5D" />
+						<div class="prod-body">
+							<h5 class="card-title">Folie de Sticlă 5D</h5>
+							<p class="card-text">
+								Protecție completă, anti-zgârieturi, compatibilă cu toate
+								husele.
+							</p>
+							<a href="pages/contact.html" class="btn-top">Detalii</a>
+						</div>
+					</div>
+					<!-- Produsul 7 -->
+					<div class="img-prod">
+						<img src="images/robot.jpg" alt="Cabluri Type-C Ultra Rezistente" />
+						<div class="prod-body">
+							<h5 class="card-title">Cablu Type-C Ultra Rezistent</h5>
+							<p class="card-text">
+								Fibra împletită. Transfer și încărcare rapidă. 1.5m lungime.
+							</p>
+							<a href="pages/contact.html" class="btn-top">Detalii</a>
+						</div>
+					</div>
+					<!-- Produsul 8 -->
+					<div class="img-prod">
+						<img src="images/robot.jpg" alt="Încărcător Wireless Fast Charge" />
+						<div class="prod-body">
+							<h5 class="card-title">Încărcător Wireless Fast Charge</h5>
+							<p class="card-text">
+								Suportă până la 15W. Compatibil cu MagSafe și Android.
+							</p>
+							<a href="pages/contact.html" class="btn-top">Detalii</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<div class="future">
+			<div class="future-gallery">
+				<h3>Lorem ipsum dolor sit amet.</h3>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque soluta
+					accusantium, consequatur ex repellat molestias?
+				</p>
+				<img src="images/robot.jpg" alt="Produs 1" />
+				<img src="images/robot.jpg" alt="Produs 1" />
+				<img src="images/robot.jpg" alt="Produs 1" />
+				<img src="images/robot.jpg" alt="Produs 1" />
+				<img src="images/robot.jpg" alt="Produs 1" />
+				<img src="images/robot.jpg" alt="Produs 1" />
+			</div>
+		</div>
+		<footer>
+			<div class="end-container">
+				<p>WaltStore 2025. Toate drepturile rezervate</p>
+			</div>
+		</footer>
+		<script src="main.js"></script>
+		<script>
+			const form = document.querySelector(".search-bar");
+			const input = form.querySelector("input");
+
+			form.addEventListener("submit", function (e) {
+				if (input.value.trim() === "") {
+					e.preventDefault(); // Oprește trimiterea formularului
+					alert("Te rugăm să introduci un cuvânt pentru căutare.");
+				}
+			});
+		</script>
+	</body>
+</html>
